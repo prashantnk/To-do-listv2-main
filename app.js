@@ -8,7 +8,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://admin-prashant:prashant123@cluster0.kjv0j.mongodb.net/todolistDB", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin-prashant:"+process.env.PASSWORD+"@cluster0.kjv0j.mongodb.net/todolistDB", { useNewUrlParser: true, useUnifiedTopology: true });
 
 const itemSchema = new mongoose.Schema({
   name: String
